@@ -2,4 +2,6 @@
 
 Dibuja cuadrados con los valores de los slider.
 
+![alt text](https://raw.githubusercontent.com/museumis/EdicionDeGraficos_Slider_JavaSwing/master/src/img/muestrados.JPG)
+
 ![alt text](https://raw.githubusercontent.com/museumis/EdicionDeGraficos_Slider_JavaSwing/master/bin/img/muestra.JPG)
