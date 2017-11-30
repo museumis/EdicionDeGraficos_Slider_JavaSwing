@@ -220,8 +220,8 @@ public class Interfaz {
 
 		// --SLIDER Width--
 		sliderW = new JSlider(JSlider.HORIZONTAL, 0, 500, 130);
-		sliderW.setMajorTickSpacing(50);
-		sliderW.setMinorTickSpacing(10);
+		sliderW.setMajorTickSpacing(100);
+		sliderW.setMinorTickSpacing(25);
 		sliderW.setPaintTicks(true);
 		sliderW.setPaintLabels(true);
 		data = new GridBagConstraints();
@@ -232,8 +232,8 @@ public class Interfaz {
 		panelNavegacion.add(sliderW, data);
 		// --SLIDER Heigth--
 		sliderH = new JSlider(JSlider.HORIZONTAL, 0, 500, 130);
-		sliderH.setMajorTickSpacing(50);
-		sliderH.setMinorTickSpacing(10);
+		sliderH.setMajorTickSpacing(100);
+		sliderH.setMinorTickSpacing(25);
 		sliderH.setPaintTicks(true);
 		sliderH.setPaintLabels(true);
 		data = new GridBagConstraints();
@@ -246,8 +246,7 @@ public class Interfaz {
 	}// Fin de iniciar componentes
 
 	public void pintarCanvas() {
-		// Reiniciar Canvas
-		
+		// Reiniciar Canvas		
 		grafico = canvas.getGraphics();
 		grafico.setColor(Color.WHITE);
 		grafico.fillRect(0, 0, canvas.getWidth(), canvas.getHeight());
@@ -256,17 +255,14 @@ public class Interfaz {
 		// Grafico
 		grafico = canvas.getGraphics();
 		grafico.setColor(new Color(r, g, b));
-
-		grafico.fillRect( 
-				sliderPoX.getValue(),
-				sliderPoY.getValue(),
-				((canvas.getWidth() / 2) - (sliderW.getValue() / 2)),
-				(((canvas.getHeight() / 2) - sliderPoY.getValue()) - (sliderH.getValue() / 2)));
+		grafico.fillRect(sliderPoX.getValue() -(sliderW.getValue()/2),
+				(canvas.getWidth()-sliderPoY.getValue())-(sliderH.getValue()/2),
+				sliderW.getValue(),
+				sliderH.getValue());
 		grafico.dispose();
 		lienzo.repaint();
 	}
-
-	/**
+		/**
 	 * Iniciar listened
 	 */
 	public void iniciarListened() {
